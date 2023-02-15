@@ -199,9 +199,9 @@ if __name__ == "__main__":
                     # we will leave 2% of the data untouched, to teach the 
                     # model, not to "overact" on the texts
                     # my custom
-                    newline = remove_random_space(line)
-                    newline = remove_random_accent(newline)
-                    newline = replace_accent_chars(newline)
+                    new_line = remove_random_space(line)
+                    new_line = remove_random_accent(new_line)
+                    new_line = replace_accent_chars(new_line)
 
                     # original
                     new_line = swap_characters_case(new_line)  
