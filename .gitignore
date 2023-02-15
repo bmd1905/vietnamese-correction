@@ -3,6 +3,11 @@ models/
 lightning_logs/
 __pycache__/
 data/data.txt
-*.csv
+#*.csv
+wiki.en.train.csv
+wiki.en.test.csv
+en.csv
+en.test.csv
+en.train.csv
 unused/
 publish

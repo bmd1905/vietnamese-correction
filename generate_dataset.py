@@ -195,7 +195,7 @@ if __name__ == "__main__":
                     print(f"skipping line as its too long ({len(line)}):\n"+line)
                     continue
                 
-                if random.random() >0.02:
+                if random.random() > 0.02:
                     # we will leave 2% of the data untouched, to teach the 
                     # model, not to "overact" on the texts
                     # my custom
