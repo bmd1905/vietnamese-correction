@@ -181,7 +181,7 @@ if __name__ == "__main__":
         sentences = file.readlines(int(num_lines*0.5))
         sentences = [cleanup(sentence) for sentence in sentences]
     
-    tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base") # for vi
+    tokenizer = AutoTokenizer.from_pretrained("doc2query/msmarco-vietnamese-mt5-base-v1") # for vi
     #xlm-roberta-base
     #facebook/bart-base
     with open(language+".csv","w",encoding='utf-8') as output:        
