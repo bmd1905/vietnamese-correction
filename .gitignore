@@ -6,3 +6,10 @@ data/data.txt
 *.csv
 unused/
 publish
+.DS_Store
+.ipynb_checkpoints
+interactive_demo.ipynb
+combine.sh
+convert_leipzig_data.sh
+debug.ipynb
+modify_data.ipynb

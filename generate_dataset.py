@@ -14,7 +14,7 @@ def tokenizer_check_if_text_too_long(text, tokenizer, max_length):
     else:
         return False#, len(data["input_ids"][0])
 
-def delete_characters(text, char_delete_percentage=0.01):
+def delete_characters(text, char_delete_percentage=0.005):
     modifyed_line = []   
     for char in text:
         if random.random() > char_delete_percentage or char in digits:
@@ -38,7 +38,7 @@ def replace_characters(text, augmentation_probability=0.01):
             modifyed_line.append(char)
     return "".join(modifyed_line)
 
-def swap_characters_case(text, augmentation_probability=0.1):
+def swap_characters_case(text, augmentation_probability=0.01):
     modifyed_line = []   
     for char in text:
         if random.random() <= augmentation_probability:            
@@ -46,7 +46,7 @@ def swap_characters_case(text, augmentation_probability=0.1):
         modifyed_line.append(char)
     return "".join(modifyed_line)
 
-def lower_case_words(text, augmentation_probability=0.5):
+def lower_case_words(text, augmentation_probability=0.05):
     modifyed_line = []   
     for word in text.split():
         if word[0].islower() == False and random.random() <= augmentation_probability:            
@@ -133,7 +133,7 @@ def change(text):
     text = _random_replace(text, match_chars)
 
     return text
-def replace_accent_chars(text, ratio=0.15):
+def replace_accent_chars(text, ratio=0.01):
     words = text.split()
     mask = np.random.random(size=len(words)) < ratio
 
@@ -144,7 +144,7 @@ def replace_accent_chars(text, ratio=0.15):
 
     return ' '.join(words)
 
-def remove_random_accent(text, ratio=0.3):
+def remove_random_accent(text, ratio=0.05):
         words = text.split()
         mask = np.random.random(size=len(words)) < ratio
         
@@ -171,29 +171,27 @@ def remove_random_space(text):
     return out.strip()
 #=========================================================================
 
-
 if __name__ == "__main__":
-    data_file = "data/data50k.vi.txt" #"data/en.wikidump.processed.24m.txt" #
-    language = "vi" # "wikidump.24m.en"
-    num_lines = sum(1 for line in open(data_file,'r'))
+    data_file = "data/data.vi.txt"
+    language = "vi"
+    num_lines = sum(1 for line in open(data_file, 'r'))
 
-    with open(data_file,'r') as file:
-        sentences = file.readlines(int(num_lines*0.5))
-        sentences = [cleanup(sentence) for sentence in sentences]
-    
-    tokenizer = AutoTokenizer.from_pretrained("google/mt5-small") # for vi
-    #xlm-roberta-base
+    with open(data_file, 'r') as file:
+        sentences = file.readlines()
+
+    tokenizer = AutoTokenizer.from_pretrained("facebook/bart-base") # for vi
     #facebook/bart-base
-    with open(language+".csv","w",encoding='utf-8') as output:        
+    with open(language+".csv", "w") as output:        
         with open(data_file,'r') as file:
             for line in tqdm(file, total=num_lines):
-                line = cleanup(line)
                 if len(line) < 1:
                     continue 
-                line = combine_sentences(line,sentences)                
-                if tokenizer_check_if_text_too_long(line,tokenizer,max_length=1024):
-                    print(f"skipping line as its too long ({len(line)}):\n"+line)
-                    continue
+
+                line = line.replace('"', '')
+                            
+                # if tokenizer_check_if_text_too_long(line,tokenizer,max_length=1024):
+                #     print(f"skipping line as its too long ({len(line)}):\n"+line)
+                #     continue
                 
                 if random.random() > 0.02:
                     # we will leave 2% of the data untouched, to teach the 
@@ -212,13 +210,10 @@ if __name__ == "__main__":
                     new_line = lower_case_words(new_line)                                           
                     new_line = remove_punctuation(new_line)
                 else:
-                    new_line = line
+                    new_line = line          
                 output.write(f'"{new_line.strip()}","{line.strip()}"\n')        
     os.system(f"echo \"text,summary\" > {language}.train.csv")
     num_lines = sum(1 for line in open(f"{language}.csv",'r'))
     os.system(f"head -n {num_lines-2000} {language}.csv >> {language}.train.csv")
     os.system(f"echo \"text,summary\" > {language}.test.csv")
-    os.system(f"tail -n 2000 {language}.csv >> {language}.test.csv")
-
-
-
+    os.system(f"tail -n 2000 {language}.csv >> {language}.test.csv")  
