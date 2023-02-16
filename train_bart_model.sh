@@ -1,3 +1,5 @@
+#google/mt5-small
+
 python run_summarization.py \
     --model_name_or_path doc2query/msmarco-vietnamese-mt5-base-v1 \
     --do_train \
@@ -8,7 +10,7 @@ python run_summarization.py \
     --validation_file vi.test.csv \
     --output_dir ./models/my-bart-base-en-mix/ \
     --overwrite_output_dir \
-    --per_device_train_batch_size=8 \
+    --per_device_train_batch_size=4 \
     --per_device_eval_batch_size=32 \
     --gradient_accumulation_steps=32 \
     --learning_rate="4e-4" \
