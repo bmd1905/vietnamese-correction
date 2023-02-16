@@ -1,7 +1,7 @@
 #google/mt5-small
 
 python run_summarization.py \
-    --model_name_or_path doc2query/msmarco-vietnamese-mt5-base-v1 \
+    --model_name_or_path google/mt5-small \
     --do_train \
     --do_eval \
     --evaluation_strategy="steps" \
@@ -25,7 +25,7 @@ python run_summarization.py \
 exit
 
 python run_summarization.py \
-    --model_name_or_path doc2query/msmarco-vietnamese-mt5-base-v1 \
+    --model_name_or_path google/mt5-small \
     --do_train \
     --do_eval \
     --train_file vi.train.csv \
@@ -47,7 +47,7 @@ exit()
 
 
 python run_summarization.py \
-    --model_name_or_path doc2query/msmarco-vietnamese-mt5-base-v1 \
+    --model_name_or_path google/mt5-small \
     --do_train \
     --do_eval \
     --train_file vi.all.train.csv \

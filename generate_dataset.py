@@ -173,7 +173,7 @@ def remove_random_space(text):
 
 
 if __name__ == "__main__":
-    data_file = "data/data50k.vi.txt" #"data/en.wikidump.processed.24m.txt" #
+    data_file = "data/datatest.vi.txt" #"data/en.wikidump.processed.24m.txt" #
     language = "vi" # "wikidump.24m.en"
     num_lines = sum(1 for line in open(data_file,'r'))
 
@@ -181,7 +181,7 @@ if __name__ == "__main__":
         sentences = file.readlines(int(num_lines*0.5))
         sentences = [cleanup(sentence) for sentence in sentences]
     
-    tokenizer = AutoTokenizer.from_pretrained("doc2query/msmarco-vietnamese-mt5-base-v1") # for vi
+    tokenizer = AutoTokenizer.from_pretrained("google/mt5-small") # for vi
     #xlm-roberta-base
     #facebook/bart-base
     with open(language+".csv","w",encoding='utf-8') as output:        
