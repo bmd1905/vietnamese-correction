@@ -4,6 +4,7 @@ lightning_logs/
 __pycache__/
 data/data.txt
 *.csv
+*.zip
 unused/
 publish
 .DS_Store
