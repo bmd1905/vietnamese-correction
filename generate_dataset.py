@@ -172,7 +172,7 @@ def remove_random_space(text):
 #=========================================================================
 
 if __name__ == "__main__":
-    data_file = "data/data50k.vi.txt"
+    data_file = "data/data.vi.txt"
     language = "vi"
     num_lines = sum(1 for line in open(data_file, 'r'))
 
