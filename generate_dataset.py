@@ -6,6 +6,7 @@ import os
 from transformers import AutoTokenizer
 from tqdm import tqdm
 import sys
+import argparse
 
 def tokenizer_check_if_text_too_long(text, tokenizer, max_length):
     data = tokenizer.batch_encode_plus([text],max_length=max_length,truncation=True,return_overflowing_tokens=True )    
@@ -172,15 +173,24 @@ def remove_random_space(text):
 #=========================================================================
 
 if __name__ == "__main__":
-    data_file = "data/data.vi.txt"
-    language = "vi"
+    # Load config
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data", help="File path of data.")
+    parser.add_argument("--language", help="Language of your data.", default='vi')
+    parser.add_argument("--model_name", help="Model name to check length of sentences.", default='facebook/bart-base')
+
+    args = parser.parse_args()
+
+    data_file = args.data #"data/data.vi.txt"
+    language = args.language
     num_lines = sum(1 for line in open(data_file, 'r'))
 
     with open(data_file, 'r') as file:
         sentences = file.readlines()
 
-    tokenizer = AutoTokenizer.from_pretrained("facebook/bart-base") # for vi
-    #facebook/bart-base
+    model_name = args.model_name
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+
     with open(language+".csv", "w") as output:        
         with open(data_file,'r') as file:
             for line in tqdm(file, total=num_lines):
