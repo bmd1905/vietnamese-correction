@@ -2,8 +2,14 @@ venv/
 models/
 lightning_logs/
 __pycache__/
+
 data/data.txt
-*.csv
+en.csv
+en.test.csv
+en.train.csv
+wiki.en.test.csv
+wiki.en.test.csv
+
 *.zip
 unused/
 publish
