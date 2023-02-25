@@ -617,7 +617,7 @@ def main():
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics if training_args.predict_with_generate else None,
-        optimizers=(Lion(model.parameters()), None)
+        optimizers=(Lion(model.parameters(), lr=float(training_args.learning_rate)), None)
     )
 
     # Training
