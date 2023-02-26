@@ -12,16 +12,13 @@ def exists(val):
 
 def update_fn(p, grad, exp_avg, lr, wd, beta1, beta2):
     # stepweight decay
-
     p.data.mul_(1 - lr * wd)
 
     # weight update
-
     update = exp_avg.clone().mul_(beta1).add(grad, alpha = 1 - beta1).sign_()
     p.add_(update, alpha = -lr)
 
     # decay the momentum running average coefficient
-
     exp_avg.mul_(beta2).add_(grad, alpha = 1 - beta2)
 
 # class

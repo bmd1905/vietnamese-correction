@@ -3,21 +3,22 @@ models/
 lightning_logs/
 __pycache__/
 
-data/data.txt
-en.csv
-en.test.csv
-en.train.csv
-wiki.en.test.csv
-wiki.en.test.csv
+data/en_data
+
+train_bart_model.sh
 
 *.zip
 unused/
 publish
 .DS_Store
 .ipynb_checkpoints
+
 interactive_demo.ipynb
+
 combine.sh
 convert_leipzig_data.sh
+train_bart_model.sh
+
 debug.ipynb
 modify_data.ipynb
 failed_concepts
