@@ -37,8 +37,6 @@ print(corrector("côn viec kin doanh thì rất kho khan nên toi quyết dinh c
 print(corrector("một số chuyen gia tài chính ngâSn hànG của Việt Nam cũng chung quan điểmnày"))
 print(corrector("Lần này anh Phươngqyết xếp hàng mua bằng được 1 chiếc"))
 print(corrector("Nhưng sức huỷ divt của cơn bão mitch vẫn chưa thấm vào đâu lsovớithảm hoạ tại Bangladesh ăm 1970"))
-
-
 ```
 ```
 Output:
@@ -48,7 +46,7 @@ Output:
 - Lần này anh Phương quyết xếp hàng mua bằng được 1 chiếc.
 - Nhưng sức huỷ diệt của cơn bão mitch vẫn chưa thấm vào đâu so với thảm hoạ tại Bangladesh năm 1970 .
 ```
-
+Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en).
 
 # Training
 First one, you need to install dependencies:
