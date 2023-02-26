@@ -1,6 +1,7 @@
 # Vietnamese-Corrector
 [![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en)
-[![Train](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/colab_train.ipynb?hl=en)
+[![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/Vietnamese-Corrector)
+
 ### Spelling Correction based on [Pretrained BARTpho](https://github.com/VinAIResearch/BARTpho)
 
 # Overview
@@ -87,7 +88,7 @@ python /content/Vietnamese-Corrector/train.py \
       --max_source_length=1024 \
       --fp16
 ```
-
+Alternative way, you can use my [colab notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/colab_train.ipynb?hl=en).
 
 # References
 [1] [BARTpho](https://github.com/VinAIResearch/BARTpho) \
