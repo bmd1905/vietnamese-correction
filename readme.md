@@ -1,4 +1,6 @@
 # Vietnamese-Corrector
+[![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en)
+[![Train](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/colab_train.ipynb?hl=en)
 ### Spelling Correction based on [Pretrained BARTpho](https://github.com/VinAIResearch/BARTpho)
 
 # Overview
