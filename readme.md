@@ -3,7 +3,7 @@
 
 # Overview
 ## BARTpho
->We present BARTpho with two versions, BARTpho-syllable and BARTpho-word, which are the first public large-scale monolingual sequence-to-sequence models >pre-trained for Vietnamese. BARTpho uses the "large" architecture and the pre-training scheme of the sequence-to-sequence denoising autoencoder BART, >thus it is especially suitable for generative NLP tasks. We conduct experiments to compare our BARTpho with its competitor mBART on a downstream task of >Vietnamese text summarization and show that: in both automatic and human evaluations, BARTpho outperforms the strong baseline mBART and improves the >state-of-the-art. We further evaluate and compare BARTpho and mBART on the Vietnamese capitalization and punctuation restoration tasks and also find that >BARTpho is more effective than mBART on these two tasks.
+>We present BARTpho with two versions, BARTpho-syllable and BARTpho-word, which are the first public large-scale monolingual sequence-to-sequence models pre-trained for Vietnamese. BARTpho uses the "large" architecture and the pre-training scheme of the sequence-to-sequence denoising autoencoder BART, thus it is especially suitable for generative NLP tasks. We conduct experiments to compare our BARTpho with its competitor mBART on a downstream task of Vietnamese text summarization and show that: in both automatic and human evaluations, BARTpho outperforms the strong baseline mBART and improves the state-of-the-art. We further evaluate and compare BARTpho and mBART on the Vietnamese capitalization and punctuation restoration tasks and also find that BARTpho is more effective than mBART on these two tasks.
 
 For more details, look at the original [paper](https://arxiv.org/abs/2109.09701).
 
@@ -63,7 +63,7 @@ S.t.
 
 When you accomplished creating dataset, let train your model, simply run:
 ```
-python /content/Vietnamese-Corrector/run_summarization.py \
+python /content/Vietnamese-Corrector/train.py \
       --model_name_or_path /models/my-custom-bartpho \
       --do_train \
       --do_eval \
