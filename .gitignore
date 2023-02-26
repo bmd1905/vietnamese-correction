@@ -4,6 +4,7 @@ lightning_logs/
 __pycache__/
 
 data/en_data
+unneed
 
 train_bart_model.sh
 
@@ -16,7 +17,7 @@ publish
 interactive_demo.ipynb
 
 combine.sh
-convert_leipzig_data.sh
+convert_leipzig_data
 train_bart_model.sh
 
 debug.ipynb
