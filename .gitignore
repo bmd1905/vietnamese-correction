@@ -15,7 +15,6 @@ data/vi_test.csv
 train_bart_model.sh
 
 *.zip
-*.txt
 data/raw
 unused/
 publish
