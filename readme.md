@@ -1,4 +1,7 @@
 # Vietnamese-Corrector
+[![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en)
+[![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/Vietnamese-Corrector)
+
 ### Spelling Correction based on [Pretrained BARTpho](https://github.com/VinAIResearch/BARTpho)
 
 # Overview
@@ -34,8 +37,6 @@ print(corrector("côn viec kin doanh thì rất kho khan nên toi quyết dinh c
 print(corrector("một số chuyen gia tài chính ngâSn hànG của Việt Nam cũng chung quan điểmnày"))
 print(corrector("Lần này anh Phươngqyết xếp hàng mua bằng được 1 chiếc"))
 print(corrector("Nhưng sức huỷ divt của cơn bão mitch vẫn chưa thấm vào đâu lsovớithảm hoạ tại Bangladesh ăm 1970"))
-
-
 ```
 ```
 Output:
@@ -45,7 +46,7 @@ Output:
 - Lần này anh Phương quyết xếp hàng mua bằng được 1 chiếc.
 - Nhưng sức huỷ diệt của cơn bão mitch vẫn chưa thấm vào đâu so với thảm hoạ tại Bangladesh năm 1970 .
 ```
-
+Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en).
 
 # Training
 First one, you need to install dependencies:
@@ -85,7 +86,7 @@ python /content/Vietnamese-Corrector/train.py \
       --max_source_length=1024 \
       --fp16
 ```
-
+Alternative way, you can use my [colab notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/colab_train.ipynb?hl=en).
 
 # References
 [1] [BARTpho](https://github.com/VinAIResearch/BARTpho) \
