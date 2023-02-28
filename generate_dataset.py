@@ -177,11 +177,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", help="File path of data.")
     parser.add_argument("--language", help="Language of your data.", default='vi')
-    parser.add_argument("--model_name", help="Model name to check length of sentences.", default='facebook/bart-base')
+    parser.add_argument("--model_name", help="Model name to check length of sentences.", default='vinai/bartpho-word')
 
     args = parser.parse_args()
 
-    data_file = args.data #"data/data.vi.txt"
+    data_file = args.data
     language = args.language
     num_lines = sum(1 for line in open(data_file, 'r'))
 

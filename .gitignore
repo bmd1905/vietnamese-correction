@@ -6,9 +6,17 @@ __pycache__/
 data/en_data
 unneed
 
+*.csv
+data/vi_processed.csv
+data/vi.csv
+data/vi_train.csv
+data/vi_test.csv
+
 train_bart_model.sh
 
 *.zip
+*.txt
+data/raw
 unused/
 publish
 .DS_Store
