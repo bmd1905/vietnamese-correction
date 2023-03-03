@@ -707,5 +707,5 @@ def _mp_fn(index):
     main()
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
