@@ -2,7 +2,7 @@
 [![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en)
 [![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/Vietnamese-Corrector)
 
-### Spelling Correction based on [Pretrained BARTpho](https://github.com/VinAIResearch/BARTpho)
+### Error Correction based on [Pretrained BARTpho](https://github.com/VinAIResearch/BARTpho)
 
 # Overview
 ## BARTpho
@@ -11,7 +11,7 @@
 For more details, look at the original [paper](https://arxiv.org/abs/2109.09701).
 
 ## My Model
-My model is a pretrained model of ```vinai/bartpho-word``` in the dataset avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC), including 10 topics: 
+My model is a pretrained model of ```vinai/bartpho-word``` in the dataset avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC) for error correction task, including 10 topics: 
 * Chinh tri Xa hoi
 * Doi song
 * Khoa hoc
