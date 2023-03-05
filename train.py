@@ -50,7 +50,10 @@ from transformers.trainer_utils import get_last_checkpoint
 from transformers.utils import check_min_version, is_offline_mode
 from transformers.utils.versions import require_version
 
-from optimizer import Lion
+from typing import Tuple
+import torch
+#from optimizer import Lion
+from lion_pytorch import Lion
 
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
@@ -618,6 +621,7 @@ def main():
         data_collator=data_collator,
         compute_metrics=compute_metrics if training_args.predict_with_generate else None,
         optimizers=(Lion(model.parameters(), lr=float(training_args.learning_rate)), None)
+        # optimizers=Lion(model.parameters(), lr=float(training_args.learning_rate)), None]
     )
 
     # Training
