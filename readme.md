@@ -24,11 +24,11 @@ This model is a fine-tuned version of ```vinai/bartpho-syllable``` in the datase
 * Vi tinh
 
 # Usage
-This model is avaiable in Huggingface at [bmd1905/vietnamese-corrector](https://huggingface.co/bmd1905/vietnamese-corrector), to quickly use my model, simply run:
+This model is avaiable in Huggingface at [bmd1905/vietnamese-correction](https://huggingface.co/bmd1905/vietnamese-correction), to quickly use my model, simply run:
 ```python
 from transformers import pipeline
 
-corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-corrector")
+corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction")
 ```
 ```python
 # Example
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```
 In case of pretraining on your own custom-dataset, you must modify the format of files the same with [data.vi.txt](https://github.com/bmd1905/Vietnamese-Corrector/blob/main/data/data.vi.txt). You then run the following script to create your dataset:
 ```
-python generate_dataset.py --data path/to/data.txt --language 'vi' --model_name 'vinai/bartpho-word'
+python generate_dataset.py --data path/to/data.txt --language 'vi' --model_name 'vinai/bartpho-syllable'
 ```
 S.t.
 * ```data```: path to your formated data.
@@ -64,20 +64,20 @@ S.t.
 
 When you accomplished creating dataset, let train your model, simply run:
 ```
-python /content/Vietnamese-Corrector/train.py \
-      --model_name_or_path /models/my-custom-bartpho \
+python train.py \
+      --model_name_or_path bmd1905/vietnamese-correction \
       --do_train \
       --do_eval \
       --evaluation_strategy="steps" \
       --eval_steps=10000 \
       --train_file /data/vi.train.csv \
       --validation_file /data/vi.test.csv \
-      --output_dir ./models/my-custom-bartpho/ \
+      --output_dir ./models/my-vietnamese-correction/ \
       --overwrite_output_dir \
       --per_device_train_batch_size=4 \
       --per_device_eval_batch_size=4 \
       --gradient_accumulation_steps=32 \
-      --learning_rate="1e-7" \
+      --learning_rate="1e-4" \
       --num_train_epochs=2 \
       --predict_with_generate \
       --logging_steps="10" \
