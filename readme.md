@@ -1,6 +1,6 @@
-# Vietnamese-Corrector
-[![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en)
-[![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/Vietnamese-Corrector)
+# Vietnamese Correction
+[![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/inference.ipynb?hl=en)
+[![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/vietnamese-correction)
 
 ### Error Correction based on [BARTpho](https://github.com/VinAIResearch/BARTpho)
 
@@ -46,14 +46,14 @@ Output:
 - Lần này anh Phương quyết xếp hàng mua bằng được 1 chiếc.
 - Nhưng sức huỷ diệt của cơn bão mitch vẫn chưa thấm vào đâu so với thảm hoạ tại Bangladesh năm 1970 .
 ```
-Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en).
+Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/inference.ipynb?hl=en).
 
 # Training
 First one, you need to install dependencies:
 ```
 pip install -r requirements.txt
 ```
-In case of pretraining on your own custom-dataset, you must modify the format of files the same with [data.vi.txt](https://github.com/bmd1905/Vietnamese-Corrector/blob/main/data/data.vi.txt). You then run the following script to create your dataset:
+In case of pretraining on your own custom-dataset, you must modify the format of files the same with [data.vi.txt](https://github.com/bmd1905/vietnamese-correction/blob/main/data/data.vi.txt). You then run the following script to create your dataset:
 ```
 python generate_dataset.py --data path/to/data.txt --language 'vi' --model_name 'vinai/bartpho-syllable'
 ```
@@ -86,7 +86,7 @@ python train.py \
       --max_source_length=1024 \
       --fp16
 ```
-Alternative way, you can use my [colab notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/colab_train.ipynb?hl=en).
+Alternative way, you can use my [colab notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/colab_train.ipynb?hl=en).
 
 # References
 [1] [BARTpho](https://github.com/VinAIResearch/BARTpho) \
