@@ -1,8 +1,8 @@
-# Vietnamese-Corrector
-[![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en)
-[![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/Vietnamese-Corrector)
+# Vietnamese Correction
+[![Inference](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/inference.ipynb?hl=en)
+[![Stars](https://img.shields.io/github/stars/bmd1905/Vietnamese-Corrector.svg)](https://api.github.com/repos/bmd1905/vietnamese-correction)
 
-### Spelling Correction based on [Pretrained BARTpho](https://github.com/VinAIResearch/BARTpho)
+### Error Correction based on [BARTpho](https://github.com/VinAIResearch/BARTpho)
 
 # Overview
 ## BARTpho
@@ -11,7 +11,7 @@
 For more details, look at the original [paper](https://arxiv.org/abs/2109.09701).
 
 ## My Model
-My model is a pretrained model of ```vinai/bartpho-word``` in the dataset avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC), including 10 topics: 
+This model is a fine-tuned version of ```vinai/bartpho-syllable``` in the dataset avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC) for error correction task, including 10 topics: 
 * Chinh tri Xa hoi
 * Doi song
 * Khoa hoc
@@ -24,11 +24,11 @@ My model is a pretrained model of ```vinai/bartpho-word``` in the dataset avaiab
 * Vi tinh
 
 # Usage
-This model is avaiable in Huggingface at [bmd1905/vietnamese-corrector](https://huggingface.co/bmd1905/vietnamese-corrector), to quickly use my model, simply run:
+This model is avaiable in Huggingface at [bmd1905/vietnamese-correction](https://huggingface.co/bmd1905/vietnamese-correction), to quickly use my model, simply run:
 ```python
 from transformers import pipeline
 
-corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-corrector")
+corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction")
 ```
 ```python
 # Example
@@ -46,16 +46,16 @@ Output:
 - Lần này anh Phương quyết xếp hàng mua bằng được 1 chiếc.
 - Nhưng sức huỷ diệt của cơn bão mitch vẫn chưa thấm vào đâu so với thảm hoạ tại Bangladesh năm 1970 .
 ```
-Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/inference.ipynb?hl=en).
+Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/inference.ipynb?hl=en).
 
 # Training
 First one, you need to install dependencies:
 ```
 pip install -r requirements.txt
 ```
-In case of pretraining on your own custom-dataset, you must modify the format of files the same with [data.vi.txt](https://github.com/bmd1905/Vietnamese-Corrector/blob/main/data/data.vi.txt). You then run the following script to create your dataset:
+In case of pretraining on your own custom-dataset, you must modify the format of files the same with [data.vi.txt](https://github.com/bmd1905/vietnamese-correction/blob/main/data/data.vi.txt). You then run the following script to create your dataset:
 ```
-python generate_dataset.py --data path/to/data.txt --language 'vi' --model_name 'vinai/bartpho-word'
+python generate_dataset.py --data path/to/data.txt --language 'vi' --model_name 'vinai/bartpho-syllable'
 ```
 S.t.
 * ```data```: path to your formated data.
@@ -64,20 +64,20 @@ S.t.
 
 When you accomplished creating dataset, let train your model, simply run:
 ```
-python /content/Vietnamese-Corrector/train.py \
-      --model_name_or_path /models/my-custom-bartpho \
+python train.py \
+      --model_name_or_path bmd1905/vietnamese-correction \
       --do_train \
       --do_eval \
       --evaluation_strategy="steps" \
       --eval_steps=10000 \
       --train_file /data/vi.train.csv \
       --validation_file /data/vi.test.csv \
-      --output_dir ./models/my-custom-bartpho/ \
+      --output_dir ./models/my-vietnamese-correction/ \
       --overwrite_output_dir \
       --per_device_train_batch_size=4 \
       --per_device_eval_batch_size=4 \
       --gradient_accumulation_steps=32 \
-      --learning_rate="1e-7" \
+      --learning_rate="1e-4" \
       --num_train_epochs=2 \
       --predict_with_generate \
       --logging_steps="10" \
@@ -86,7 +86,7 @@ python /content/Vietnamese-Corrector/train.py \
       --max_source_length=1024 \
       --fp16
 ```
-Alternative way, you can use my [colab notebook](https://colab.research.google.com/github/bmd1905/Vietnamese-Corrector/blob/main/colab_train.ipynb?hl=en).
+Alternative way, you can use my [colab notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/colab_train.ipynb?hl=en).
 
 # References
 [1] [BARTpho](https://github.com/VinAIResearch/BARTpho) \
