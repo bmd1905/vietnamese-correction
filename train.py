@@ -285,6 +285,11 @@ def main():
     else:
         model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
+    # print(model_args)
+    # print(data_args)
+    # print(training_args)
+    # sys.exit()
+    
     # Setup logging
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -390,7 +395,7 @@ def main():
         revision=model_args.model_revision,
         use_auth_token=True if model_args.use_auth_token else None,
     )
-    
+
     config.attention_dropout = 0.2
     config.classifier_dropout = 0.4
     config.dropout = 0.2

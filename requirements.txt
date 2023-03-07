@@ -10,3 +10,5 @@ torch >= 1.3
 wheel
 jiwer
 evaluate
+unidecode
+lion_pytorch
