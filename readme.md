@@ -11,17 +11,7 @@
 For more details, look at the original [paper](https://arxiv.org/abs/2109.09701).
 
 ## My Model
-This model is a fine-tuned version of ```vinai/bartpho-syllable``` in the dataset avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC) for error correction task, including 10 topics: 
-* Chinh tri Xa hoi
-* Doi song
-* Khoa hoc
-* Kinh doanh
-* Phap luat
-* Suc khoe
-* The gioi
-* The thao
-* Van hoa
-* Vi tinh
+This model is a fine-tuned version of ```vinai/bartpho-syllable```. The original dataset is avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC), I customized it for error correction task, you can find my final dataset at [Huggingface Datasets](https://huggingface.co/datasets/bmd1905/error-correction-vi).
 
 # Usage
 This model is avaiable in Huggingface at [bmd1905/vietnamese-correction](https://huggingface.co/bmd1905/vietnamese-correction), to quickly use my model, simply run:
