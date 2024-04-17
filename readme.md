@@ -102,7 +102,8 @@ python train.py \
       --max_source_length=1024 \
       --fp16
 ```
-Alternative way, you can use my Colab notebook [with script](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/colab_train.ipynb?hl=en) or [with code](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/aio.ipynb?hl=en).
+Alternative way, you can use [my Colab notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/train_v2.ipynb?hl=en).
+
 
 # References
 [1] [BARTpho](https://github.com/VinAIResearch/BARTpho) \
