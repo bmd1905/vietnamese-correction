@@ -110,3 +110,5 @@ Alternative way, you can use [my Colab notebook](https://colab.research.google.c
 [2] [@oliverguhr/spelling](https://github.com/oliverguhr/spelling) \
 [3] [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC)
 
+
+This repo is sponsored by [AI VIET NAM](https://www.facebook.com/aivietnam.edu.vn).
