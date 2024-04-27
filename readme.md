@@ -65,44 +65,7 @@ Output:
 Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/inference.ipynb?hl=en).
 
 # Training
-First one, you need to install dependencies:
-```
-pip install -r requirements.txt
-```
-In case of pretraining on your own custom-dataset, you must modify the format of files the same with [data.vi.txt](https://github.com/bmd1905/vietnamese-correction/blob/main/data/data.vi.txt). You then run the following script to create your dataset:
-```
-python generate_dataset.py --data path/to/data.txt --language 'vi' --model_name 'vinai/bartpho-syllable'
-```
-S.t.
-* ```data```: path to your formated data.
-* ```language```: a string to name your outputed file.
-* ```model_name```: check wherever your sentences suitable with the model length, if not, remove it.
-
-When you accomplished creating dataset, let train your model, simply run:
-```
-python train.py \
-      --model_name_or_path bmd1905/vietnamese-correction \
-      --do_train \
-      --do_eval \
-      --evaluation_strategy="steps" \
-      --eval_steps=10000 \
-      --train_file /data/vi.train.csv \
-      --validation_file /data/vi.test.csv \
-      --output_dir ./models/my-vietnamese-correction/ \
-      --overwrite_output_dir \
-      --per_device_train_batch_size=4 \
-      --per_device_eval_batch_size=4 \
-      --gradient_accumulation_steps=32 \
-      --learning_rate="1e-4" \
-      --num_train_epochs=2 \
-      --predict_with_generate \
-      --logging_steps="10" \
-      --save_total_limit="2" \
-      --max_target_length=1024 \
-      --max_source_length=1024 \
-      --fp16
-```
-Alternative way, you can use [my Colab notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/train_v2.ipynb?hl=en).
+Please follow [this notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/train_v2.ipynb?hl=en).
 
 
 # References
