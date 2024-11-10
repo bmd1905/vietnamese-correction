@@ -14,11 +14,11 @@ For more details, look at the original [paper](https://arxiv.org/abs/2109.09701)
 This model is a fine-tuned version of ```vinai/bartpho-syllable```. The original dataset is avaiable at [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC), I customized it for error correction task, you can find my final dataset at [Huggingface Datasets](https://huggingface.co/datasets/bmd1905/error-correction-vi).
 
 # Usage
-This model is avaiable in Huggingface at [bmd1905/vietnamese-correction](https://huggingface.co/bmd1905/vietnamese-correction), to quickly use my model, simply run:
+This model is avaiable in Huggingface at [bmd1905/vietnamese-correction-v2](https://huggingface.co/bmd1905/vietnamese-correction-v2), to quickly use my model, simply run:
 ```python
 from transformers import pipeline
 
-corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction")
+corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction-v2")
 ```
 ```python
 # Example
@@ -62,10 +62,10 @@ Output:
 - Nền kinh tế thế giới đang đứng trước nguy cơ của một cuộc suy thoái.
 - Kinh tế Việt Nam đang đứng trước 1 thời kỳ đổi mới, chưa từng có tiền lệ trong lịch sử.
 ```
-Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/inference.ipynb?hl=en).
+Or you can use my [notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/notebooks/inference.ipynb).
 
 # Training
-Please follow [this notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/train_v2.ipynb?hl=en).
+Please follow [this notebook](https://colab.research.google.com/github/bmd1905/vietnamese-correction/blob/main/notebooks/train_v2.ipynb).
 
 
 # References
