@@ -72,6 +72,3 @@ Please follow [this notebook](https://colab.research.google.com/github/bmd1905/v
 [1] [BARTpho](https://github.com/VinAIResearch/BARTpho) \
 [2] [@oliverguhr/spelling](https://github.com/oliverguhr/spelling) \
 [3] [@duyvuleo/VNTC](https://github.com/duyvuleo/VNTC)
-
-
-This repo is sponsored by [AI VIET NAM](https://www.facebook.com/aivietnam.edu.vn).
